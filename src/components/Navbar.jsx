@@ -4,37 +4,39 @@ import logo from "../images/logo.png";
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
-      <img src={logo} alt="logo" width="3%" />
-      <div className="text-light">
-        Corona Tracker <span className="sr-only">(current)</span>
+      <div className="container">
+        <a className="navbar-brand" href="#">
+          <img src={logo} alt="logo" width="5%" />
+          Corona Tracker
+        </a>
+        <ul className="navbar-nav">
+          <li className="nav-item active  ">
+            <a className="nav-link" href="#">
+              Home
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a className="nav-link" href="#">
+              What is COVID-19
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a className="nav-link" href="#">
+              Self Assess
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a className="nav-link" href="#">
+              About
+            </a>
+          </li>
+          <li className="nav-item active">
+            <a className="nav-link" href="#">
+              Login
+            </a>
+          </li>
+        </ul>
       </div>
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item active  ">
-          <a className="nav-link" href="#">
-            Home <span className="sr-only">(current)</span>
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="#">
-            What is COVID-19 <span className="sr-only">(current)</span>
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="#">
-            Self Assess <span className="sr-only">(current)</span>
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="#">
-            About <span className="sr-only">(current)</span>
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link" href="#">
-            Login <span className="sr-only">(current)</span>
-          </a>
-        </li>
-      </ul>
     </nav>
   );
 };
