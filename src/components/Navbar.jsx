@@ -5,10 +5,10 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <div className="navbar-brand d-flex">
           <img src={logo} alt="logo" width="5%" />
           Corona Tracker
-        </a>
+        </div>
         <ul className="navbar-nav">
           <li className="nav-item active  ">
             <a className="nav-link" href="#">
