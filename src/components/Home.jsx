@@ -1,23 +1,11 @@
-import React from "react";
-import fire from "../config";
-import { Button } from "reactstrap";
+import React from 'react'
 
-class Home extends React.Component {
-  logout() {
-    fire.auth().signOut();
-  }
-  render() {
-    return (
-      <div>
-        <h1>Welcome to Home Page</h1>
-        <h3>Successfully Loggedin</h3>
-        {/* <button onClick={this.logout}>Logout</button> */}
-        <Button color="primary" className="btn-lg" onClick={this.logout}>
-          Logout
-        </Button>
-      </div>
-    );
-  }
+const Home = () => {
+  return (
+    <div>
+      <h1>Welcome To HomePage</h1>
+    </div>
+  )
 }
 
-export default Home;
+export default Home
