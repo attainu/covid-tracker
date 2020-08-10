@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 export const Navigator = () => (
   <Navbar expand="lg navbar-dark bg-dark">
     <img src={logo} alt="logo" width="3%" />
-    <Link>Corona Tracker</Link>
+    <Link to={"/"}>Corona Tracker</Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto ">
