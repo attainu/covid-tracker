@@ -9,7 +9,7 @@ import SelfAssess from "./components/SelfAssess";
 import Covid from "./components/Covid";
 import Login from "./components/Login";
 import { Route, Switch } from "react-router-dom";
-import firebase from "firebase";
+// import firebase from "firebase";
 import fire from "././config";
 
 class App extends Component {

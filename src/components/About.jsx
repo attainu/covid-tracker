@@ -37,7 +37,7 @@ const About = () => {
       </p>
       <h3 className="">-:Project Partners:-</h3>
       <img src={logo} alt="logo" width="100px" height="100px" />
-      <h4>Manmohan Sahoo</h4>
+      <h4>Prashant Shekhawat</h4>
       <img src={logo} alt="logo" width="100px" height="100px" />
       <h4>Manmohan Sahoo</h4>
     </div>
