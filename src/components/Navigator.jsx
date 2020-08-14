@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../images/logo.png";
 import { Nav, Navbar } from "react-bootstrap";
 import {Link} from "react-router-dom"
-
+import "../App.css"
 export const Navigator = () => (
   <Navbar expand="lg navbar-dark bg-dark">
     <img src={logo} alt="logo" width="3%" />
@@ -11,7 +11,7 @@ export const Navigator = () => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto ">
         <Nav.Item>
-          <Nav.Link><Link to={"/home"}>Home</Link></Nav.Link>
+          <Nav.Link><Link to={"/"}>Home</Link></Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link><Link to={"/covid"}>What is COVID-19</Link></Nav.Link>
