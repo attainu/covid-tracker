@@ -35,3 +35,9 @@ export const responses=(id)=> (dispatch,state) => {
   
 
 }
+
+export const history=(result,date)=> (dispatch,getState) => {
+    
+    console.log(result,date.slice(0,24))
+        //dispatch({type:"SET_HISTORY",payload6:email,payload7:history});
+}

@@ -5,3 +5,20 @@
   margin: auto;
   height: 100%;
 }
+.form{
+  width:300px;
+}
+.login-main{
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-weight: bold;
+}
+.button-register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+}

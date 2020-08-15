@@ -89,6 +89,7 @@ const Reducer2=(state=initialState,action)=>{
             case "SET_RESPONSE":
               const stateCopy2={...state,response:payload4}
               return stateCopy2;
+              
        
         default:
             return state;       

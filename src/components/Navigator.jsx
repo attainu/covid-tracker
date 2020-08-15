@@ -1,10 +1,18 @@
-import React from "react";
+
 import logo from "../images/logo.png";
 import { Nav, Navbar } from "react-bootstrap";
 import {Link} from "react-router-dom"
 import "../App.css"
-export const Navigator = () => (
-  <Navbar expand="lg navbar-dark bg-dark">
+import {logOut}  from "../redux/Action/authaction";
+import {connect} from "react-redux";
+
+import React, { Component } from 'react'
+
+ class Navigator extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar expand="lg navbar-dark bg-dark">
     <img src={logo} alt="logo" width="3%" />
     <Link>Corona Tracker</Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,9 +31,25 @@ export const Navigator = () => (
           <Nav.Link><Link to={"/About"}>About</Link></Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link><Link to={"/login"}>Login</Link></Nav.Link>
+          <Nav.Link>
+           
+           {this.props.isauth?
+            <div onClick={()=>this.props.logOut()}>LogOut</div>: <Link to={"/login"}>LogIn</Link>}
+            </Nav.Link>
         </Nav.Item>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
-);
+      </div>
+    )
+  }
+}
+
+const mapStateToProps=(state)=>{
+
+return{
+  isauth:state.users.isAuthenticated
+}
+}
+
+export default connect(mapStateToProps,{logOut})(Navigator);
