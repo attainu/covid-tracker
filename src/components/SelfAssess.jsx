@@ -35,16 +35,26 @@ class SelfAssess extends Component {
         <div>
 
           <Button onClick={() => {
-
+            
+            
             this.props.score_update();
 
             console.log(this.props.response)
 
-            { this.props.response === 4 ? this.setState({ isOpen: true }) : alert("Please Answer each question") }
-
+            if(this.props.response === 4){
+                this.setState({ isOpen: true });
+                
+            }
+            else{
+              alert("Please Answer each question")
+            }
+            this.props.history();
+            
           }}>SUBMIT</Button><Button color="primary" onClick={() =>
             this.props.retake()}>Retake</Button>
+            {console.log(this.state.isOpen)}
           <Modal isOpen={this.state.isOpen} toggle="true" >
+            
             <ModalHeader >Result</ModalHeader>
             <ModalBody>
               <div>Your infection risk is

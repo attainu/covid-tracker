@@ -31,6 +31,9 @@ import React, { Component } from 'react'
           <Nav.Link><Link to={"/About"}>About</Link></Nav.Link>
         </Nav.Item>
         <Nav.Item>
+          <Nav.Link><Link to={"/profile"}>Profile</Link></Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
           <Nav.Link>
            
            {this.props.isauth?

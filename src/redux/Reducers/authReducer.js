@@ -2,7 +2,8 @@ let initialState = {
     users: [],
     fullname: '',
     email: '',
-    isAuthenticated: false
+    isAuthenticated: false,
+    history:[]
 }
 
 
@@ -34,6 +35,40 @@ const reducer = (state= initialState, action) => {
             stateCopy.isAuthenticated = isAuthenticated1;
             
             return stateCopy;
+        case "SET_HISTORY":
+            if(localStorage.getItem("history")===null){
+                localStorage.setItem("history", JSON.stringify([{history:[action.payload6],email:action.payload7}]));
+            }
+            else
+            {
+                let fetchuser=JSON.parse(localStorage.getItem("history"))
+                console.log(fetchuser)
+                let kuc=fetchuser.find(find=>find.email===action.payload7)
+                if(kuc){
+                   let fetchuser=JSON.parse(localStorage.getItem("history"))
+                   stateCopy.history=[...fetchuser]
+                   let index= fetchuser.findIndex(index=>index.email===action.payload7)
+                   stateCopy.history[index].history=[...fetchuser[index].history,action.payload6]
+                   localStorage.setItem("history", JSON.stringify(stateCopy.history)) 
+                   console.log(stateCopy)
+                }
+                else
+                {
+                    let fetchuser=JSON.parse(localStorage.getItem("history"))
+                    stateCopy.history=[...fetchuser,{history:[action.payload6],email:action.payload7}]
+                    localStorage.setItem("history", JSON.stringify(stateCopy.history)) 
+                }
+            //     let fetchuser=JSON.parse(localStorage.getItem("history"))
+            // stateCopy.history=[...fetchuser,{history:[action.payload6],email:action.payload7}]
+            // localStorage.setItem("history", JSON.stringify(stateCopy.history))
+            // console.log(fetchuser)
+        }
+            //else
+            // {let fetchuser=JSON.parse(localStorage.getItem("users"))
+            // stateCopy.users = [...fetchuser, action.payload]
+            // localStorage.setItem("users", JSON.stringify(stateCopy.users));}
+            return stateCopy;
+
 
         default:
             return stateCopy;
