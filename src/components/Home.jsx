@@ -1,5 +1,5 @@
 
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, Button, CardTitle, CardText, Row, Col,CardBody,CardImg,Spinner,CardLink } from 'reactstrap';
 import "../styles/Home.css";
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Table, Badge } from 'reactstrap';
 import numeral from "numeral";
@@ -7,11 +7,13 @@ import logo from "../images/download.jpg";
 import di from "../images/dropdown.png";
 import { sortData } from "../util";
 import { connect } from "react-redux";
-import { firstdata, firstdatallCountries, update } from "../redux/Action/action1";
+import { firstdata, firstdatallCountries, update,news } from "../redux/Action/action1";
+import noimage from "../images/No-Image-Available.png";
 import { Link } from "react-router-dom";
 
 
 import React, { Component } from 'react'
+
 
 class Home extends Component {
   state = {
@@ -23,6 +25,7 @@ class Home extends Component {
     this.props.firstdata()
     this.props.firstdatallCountries()
     this.handleclick()
+    this.props.news()
   }
 
 
@@ -43,13 +46,13 @@ class Home extends Component {
   render() {
     return (
       <div >
-        <Row>
+        <Row className="main-row">
 
           <Col >
 
             <div >
               <div className="drop-down">
-                <Row className="left-rows"> 
+                <Row className="dropdown-row"> 
                   <Col sm="6">
                   <div style={{ fontSize: "16px", fontWeight: "bold", color: "red" }}><img style={{ heigth: "60%", width: "60%" }} src="https://i.ibb.co/7QpKsCX/image.png" /> TRACKER </div>
                   </Col>
@@ -57,7 +60,7 @@ class Home extends Component {
                   <div>
                     <Dropdown isOpen={this.state.isopen} toggle={this.state.toggle}>
                       <DropdownToggle onClick={() => this.setState({ isopen: !this.state.isopen })}>
-                        {this.props.countrycode}<img style={{ height: "15%", width: "15%" }} src={di} />
+                        {this.props.countrycode}<img style={{ height: "10%", width: "10%" }} src={di} />
                       </DropdownToggle>
                       <DropdownMenu
                         modifiers={{
@@ -97,7 +100,7 @@ class Home extends Component {
               
               <div>
                 <Row className="left-rows">
-                  <Col sm="4">
+                  <Col sm="4" className="col-card">
                     <Card body inverse color="danger">
                       <CardTitle className="card-title">Confirmed</CardTitle>
                       <CardText className="card-text">{numeral(this.props.currentCountry.cases).format("0,0")}</CardText>
@@ -141,13 +144,15 @@ class Home extends Component {
                     </Card>
                   </Col>
                 </Row>
-                <Link to="/moreInfo"><Button color="info">More Information</Button>{' '}</Link>
+                <Link to="/moreInfo"><Button className="button-moreinfo" color="info">More Information</Button>{' '}</Link>
               </div>
             </div>
           </Col>
+          
           <Col sm="4" >
+          <h4>{this.props.currentCountry.affectedCountries} Countries Affected</h4>
             <div style={{ overflow: "auto", height: "600px" }}>
-              <h4>{this.props.currentCountry.affectedCountries} Countries Affected</h4>
+              
               <Table striped >
                 <thead>
                   <tr>
@@ -170,21 +175,38 @@ class Home extends Component {
             </div>
           </Col>
         </Row>
+        <h3>Some News Upadate</h3>
+         <Row>
+           
+           {this.props.newscovid===[]?<Spinner type="grow" color="success" />:(this.props.newscovid.map(map=><Col sm="4" >
+           <Card className="news-col">
+        <CardImg top width="100%" style={{width:"280px",height:"300px"}} src={map.urlToImage===null?noimage:map.urlToImage} alt="Card image cap" />
+        <CardBody>
+        <CardLink href={map.url} target="_blank" >{map.title}</CardLink>
+         
+          
+          
+          
+        </CardBody>
+      </Card>
+             </Col>))}
+           </Row>    
       </div>
     )
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state.countrydata.currentallCountry)
+  console.log(state.countrydata.news)
   return {
     currentallCountry: state.countrydata.currentallCountry,
     dropdown: state.countrydata.dropdown,
     currentCountry: state.countrydata.currentCountry,
     countrycode: state.countrydata.countrycode,
-    flag: state.countrydata.flag
+    flag: state.countrydata.flag,
+    newscovid:state.countrydata.news
 
   }
 }
 
-export default connect(mapStateToProps, { firstdata, firstdatallCountries, update })(Home);
+export default connect(mapStateToProps, { firstdata, firstdatallCountries, update,news })(Home);
 

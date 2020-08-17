@@ -25,7 +25,32 @@
      font-weight: bold
 }
 .card-text{
-    font-size: 30px;
+    font-size: 28px;
     font-family: monospace; 
      font-weight: bold
+}
+
+.main-row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin:10px !important;
+}
+
+.dropdown-row{
+    padding: 1%;
+}
+
+.button-moreinfo{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.flag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.news-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

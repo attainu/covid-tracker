@@ -28,13 +28,16 @@ action.login = (userCreds, userArray) => {
     let { email, password } = userCreds;
     let localStorageUserArray = JSON.parse(localStorage.getItem("users"))
     console.log(localStorageUserArray)
-    const user = localStorageUserArray.find(userObj => userObj.email === email && userObj.password === password)
+    if(localStorageUserArray===null)
+    {alert("Please register first")}
+    else
+    {const user = localStorageUserArray.find(userObj => userObj.email === email && userObj.password === password)
     console.log(user)
     if (user) {
         let { email, fullname } = user;
         return { type: 'LOGIN', payload: { email, fullname, isAuthenticated: true } }
     }
-    return { type: 'LOGIN', payload: { email: '', fullname: '', isAuthenticated: false } }
+    return { type: 'LOGIN', payload: { email: '', fullname: '', isAuthenticated: false } }}
 }
 
 action.logOut = () => {

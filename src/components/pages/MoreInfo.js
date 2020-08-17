@@ -3,35 +3,36 @@ import { connect } from "react-redux";
 import { PieChart } from 'react-minimal-pie-chart';
 import { Card, CardImg, CardImgOverlay, CardTitle, CardText, Row, Col,Badge,ListGroup,ListGroupItem } from 'reactstrap';
 import numeral from "numeral";
+import "../../styles/moreinfo.css"
 
 class MoreInfo extends Component {
     render() {
         return (
-            <div style={{ width: "100%", margin: "10px" }}>
+            <div >
                 <Row >
-                    <Col sm='6' style={{width:"100%",height:"100%"}}>
+                    <Col sm='6' className="flag">
                         
                             <img src={this.props.flag} alt="Card image cap" />
 
                         
                     </Col>
-                    <Col>
-                        <Card inverse>
+                    <Col sm="6" style={{padding:"0px"}}>
+                        <div >
 
-                            <Card style={{ color: "black", fontSize: "30px", fontWeight: "bold" }}>
-                                <CardTitle>{this.props.currentCountry.continent === undefined ? <div>Worldwide</div> : <div>Continent :{this.props.currentCountry.continent}</div>}</CardTitle>
-                                <CardTitle>{this.props.currentCountry.country === undefined ? <div></div> : <div>Country :{this.props.currentCountry.country}</div>}</CardTitle>
-                                <CardTitle>Population :{numeral(this.props.currentCountry.population).format("0,0")}</CardTitle>
+                            <div style={{ color: "green", fontSize: "25px",fontWeight:"bold"}}>
+                                <div>{this.props.currentCountry.continent === undefined ? <div><span className="flag-title">Worldwide</span></div> : <div><span className="flag-title">Continent :</span>{this.props.currentCountry.continent}</div>}</div>
+                                <div>{this.props.currentCountry.country === undefined ? <div></div> : <div><span className="flag-title">Country :</span>{this.props.currentCountry.country}</div>}</div>
+                                <div><span className="flag-title">Population :</span>{numeral(this.props.currentCountry.population).format("0,0")}</div>
 
-                            </Card>
-                        </Card>
+                            </div>
+                        </div>
                     </Col>
                 </Row>
                 <Row style={{ margin: "10px" }}>
                     <Col sm="4">
                         <Card body inverse color="warning" style={{ fontSize: "30px", fontFamily: "monospace", fontWeight: "bold", height: "100%" }}>
                             <CardTitle>Active</CardTitle>
-                            <CardTitle>{numeral(this.props.currentCountry.active).format("0,0")}</CardTitle>
+                            <CardTitle className="active">{numeral(this.props.currentCountry.active).format("0,0")}</CardTitle>
 
 
                         </Card>
@@ -39,7 +40,7 @@ class MoreInfo extends Component {
                     <Col sm="4">
                         <Card body inverse color="danger" style={{ fontSize: "30px", fontFamily: "monospace", fontWeight: "bold", height: "100%" }}>
                             <CardTitle>Critical</CardTitle>
-                            <CardTitle>{numeral(this.props.currentCountry.critical).format("0,0")}</CardTitle>
+                            <CardTitle className="active">{numeral(this.props.currentCountry.critical).format("0,0")}</CardTitle>
 
 
                         </Card>

@@ -1,0 +1,19 @@
+.row{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.badge{
+    font-size: 20px !important;
+}
+
+.flag-title{
+    font-size: 30px;
+    color: rgb(42, 47, 49);
+    font-weight: bold;
+}
+.active{
+    font-size: 30px;
+}

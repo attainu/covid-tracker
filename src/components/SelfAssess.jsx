@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Alert, Button, Modal, ModalHeader, ModalBody, ModalFooter, Badge } from "reactstrap";
 import { connect } from "react-redux";
 import { answerupdate, score_update, retake, responses,history } from "../redux/Action/actionQuiz";
+import "../styles/selfaccess.css"
 import { Link } from "react-router-dom";
 
 class SelfAssess extends Component {
@@ -33,8 +34,8 @@ class SelfAssess extends Component {
 
 
         <div>
-
-          <Button onClick={() => {
+          <div>Note: Self access history will be saved in your profile when you are logged In</div>
+          <Button className="main-button" onClick={() => {
             
             
             this.props.score_update();
@@ -50,7 +51,7 @@ class SelfAssess extends Component {
             }
             this.props.history();
             
-          }}>SUBMIT</Button><Button color="primary" onClick={() =>
+          }}>SUBMIT</Button><Button className="main-button" color="primary" onClick={() =>
             this.props.retake()}>Retake</Button>
             {console.log(this.state.isOpen)}
           <Modal isOpen={this.state.isOpen} toggle="true" >
