@@ -182,7 +182,7 @@ class Home extends Component {
            <Card className="news-col">
         <CardImg top width="100%" style={{width:"280px",height:"300px"}} src={map.urlToImage===null?noimage:map.urlToImage} alt="Card image cap" />
         <CardBody>
-        <CardLink href={map.url} target="_blank" >{map.title}</CardLink>
+        <CardLink className="atag" href={map.url} target="_blank" >{map.title}</CardLink>
          
           
           

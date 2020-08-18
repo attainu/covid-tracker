@@ -26,7 +26,7 @@ class SelfAssess extends Component {
         </div>
         <div >Note : Please provide correct information </div>
         {this.props.quiz.map((map1, index1) => <Alert color="primary">{index1 + 1}__
-    {map1.question} {map1.answers.map((map3, index) => <div><button value={map1.questionId} onClick={(e) => {
+    {map1.question} {map1.answers.map((map3, index) => <div><button  className="ans-button" value={map1.questionId} onClick={(e) => {
           this.props.answerupdate(e.target.value, map3);
           this.props.responses(e.target.value);
         }}>{map3}</button></div>)}

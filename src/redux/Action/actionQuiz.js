@@ -24,9 +24,14 @@ export const retake = () => (dispatch) => {
 
 export const responses = (id) => (dispatch, state) => {
     let findid = state().quiz.qBank.find(find => find.questionId === id)
+    
     if (findid.answers.length === 1) {
-        let new_score = state().quiz.response + 1;
+         
+            let new_score = state().quiz.response + 1;
         dispatch({ type: "SET_RESPONSE", payload4: new_score })
+          
+          
+       
     }
     // (check=>{ if(check.answers.length===1)
     //     {let new_score=state().quiz.response+1;

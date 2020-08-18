@@ -5,21 +5,21 @@ import {Link} from "react-router-dom"
 import "../App.css"
 import {logOut}  from "../redux/Action/authaction";
 import {connect} from "react-redux";
-
+import "../styles/navi.css"; 
 import React, { Component } from 'react'
 
  class Navigator extends Component {
   render() {
     return (
       <div>
-        <Navbar expand="lg navbar-dark bg-dark">
-    <img src={logo} alt="logo" width="3%" />
+        <Navbar expand="lg navbar-dark bg-dark" >
+    <img src={logo} alt="logo" style={{width:"3%",height:"3%",margin:"0.5%"}} />
     <Link>Corona Tracker</Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto ">
         <Nav.Item>
-          <Nav.Link><Link to={"/"}>Home</Link></Nav.Link>
+          <Nav.Link  ><Link to={"/"}>Home</Link></Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link><Link to={"/covid"}>What is COVID-19</Link></Nav.Link>
