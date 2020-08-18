@@ -151,7 +151,7 @@ class Home extends Component {
           
           <Col sm="4" >
           <h4>{this.props.currentCountry.affectedCountries} Countries Affected</h4>
-            <div style={{ overflow: "auto", height: "600px" }}>
+            <div style={{ overflow: "auto", height: "630px" }}>
               
               <Table striped >
                 <thead>

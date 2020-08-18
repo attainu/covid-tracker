@@ -13,8 +13,8 @@ import React, { Component } from 'react'
     return (
       <div>
         <Navbar expand="lg navbar-dark bg-dark" >
-    <img src={logo} alt="logo" style={{width:"3%",height:"3%",margin:"0.5%"}} />
-    <Link>Corona Tracker</Link>
+    <Link to={"/"}><img src={logo} alt="logo" style={{width:"30px",height:"30px",margin:"0.5%"}} /></Link>
+    <Link to={"/"}>Corona Tracker</Link>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto ">

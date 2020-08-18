@@ -19,7 +19,7 @@ class MoreInfo extends Component {
                     <Col sm="6" style={{padding:"0px"}}>
                         <div >
 
-                            <div style={{ color: "green", fontSize: "25px",fontWeight:"bold"}}>
+                            <div  className="world-data" >
                                 <div>{this.props.currentCountry.continent === undefined ? <div><span className="flag-title">Worldwide</span></div> : <div><span className="flag-title">Continent :</span>{this.props.currentCountry.continent}</div>}</div>
                                 <div>{this.props.currentCountry.country === undefined ? <div></div> : <div><span className="flag-title">Country :</span>{this.props.currentCountry.country}</div>}</div>
                                 <div><span className="flag-title">Population :</span>{numeral(this.props.currentCountry.population).format("0,0")}</div>
@@ -30,15 +30,15 @@ class MoreInfo extends Component {
                 </Row>
                 <Row style={{ margin: "10px" }}>
                     <Col sm="4">
-                        <Card body inverse color="warning" style={{ fontSize: "30px", fontFamily: "monospace", fontWeight: "bold", height: "100%" }}>
-                            <CardTitle>Active</CardTitle>
-                            <CardTitle className="active">{numeral(this.props.currentCountry.active).format("0,0")}</CardTitle>
+                        <Card body inverse color="warning" className="act-card" >
+                            <CardTitle style={{color:"black"}}>Active</CardTitle>
+                            <CardTitle style={{color:"black"}} className="active">{numeral(this.props.currentCountry.active).format("0,0")}</CardTitle>
 
 
                         </Card>
                     </Col >
                     <Col sm="4">
-                        <Card body inverse color="danger" style={{ fontSize: "30px", fontFamily: "monospace", fontWeight: "bold", height: "100%" }}>
+                        <Card body inverse color="danger" className="act-card">
                             <CardTitle>Critical</CardTitle>
                             <CardTitle className="active">{numeral(this.props.currentCountry.critical).format("0,0")}</CardTitle>
 
@@ -47,7 +47,7 @@ class MoreInfo extends Component {
                     </Col>
 
                     <Col sm="4">
-                        <Card body inverse color="secondary">
+                        <Card body outline color="secondary" style={{height:"87%"}}>
                             <PieChart
                                 data={[
                                     { title: 'One', value: this.props.currentCountry.active, color: '#ffc107' },
@@ -89,7 +89,7 @@ class MoreInfo extends Component {
                     </Col>
                     <Col sm="6">
                     <h3>PieChart for Per Million Data</h3>
-                    <Card body inverse color="secondary" style={{height:"100%"}}>
+                    <Card body outline color="secondary" style={{height:"87%"}}>
                     
                             <PieChart
                                 data={[

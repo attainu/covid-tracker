@@ -134,7 +134,7 @@ export default class Covid extends Component {
           </p>
         </div>
         <h1 style={{fontSize:"18px",margintopp:"2%"}}>Frequently Asked Questions</h1>
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}> What is a novel coronavirus?</Button>
+        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem',width:"100%",width:"100%" ,textAlign:"left"}}> What is a novel coronavirus?</Button>
       <Collapse isOpen={this.state.isOpen}>
         <Card>
           <CardBody>
@@ -147,7 +147,7 @@ export default class Covid extends Component {
         </Card>
       </Collapse>
       <div>
-        <Button color="primary" onClick={this.toggle1} style={{ marginBottom: '1rem' }}>  Why is the disease being called coronavirus disease
+        <Button color="primary" onClick={this.toggle1} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>  Why is the disease being called coronavirus disease
                 2019,COVID-19?</Button>
       <Collapse isOpen={this.state.isOpen1}>
         <Card>
@@ -163,7 +163,7 @@ export default class Covid extends Component {
           </CardBody>
         </Card>
       </Collapse></div>
-      <Button color="primary" onClick={this.toggle2} style={{ marginBottom: '1rem' }}>  How does the virus spread?
+      <Button color="primary" onClick={this.toggle2} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>  How does the virus spread?
                </Button>
       <Collapse isOpen={this.state.isOpen2}>
         <Card>
@@ -182,7 +182,7 @@ export default class Covid extends Component {
           </CardBody>
         </Card>
       </Collapse>
-      <Button color="primary" onClick={this.toggle3} style={{ marginBottom: '1rem' }}>  Can i get COVID-19 from food (incluiding restaurant
+      <Button color="primary" onClick={this.toggle3} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>  Can i get COVID-19 from food (incluiding restaurant
                 take-out,produce refrigerated or packed food) or drinking water
                 ?
                </Button>
@@ -210,7 +210,7 @@ export default class Covid extends Component {
           </CardBody>
         </Card>
       </Collapse>
-      <Button color="primary" onClick={this.toggle4} style={{ marginBottom: '1rem' }}>  Will warm weather stop the outbreak of covid-19?
+      <Button color="primary" onClick={this.toggle4} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>  Will warm weather stop the outbreak of covid-19?
                </Button>
       <Collapse isOpen={this.state.isOpen4}>
         <Card>
@@ -226,7 +226,7 @@ export default class Covid extends Component {
         </Card>
       </Collapse>
       <div>
-      <Button color="primary" onClick={this.toggle5} style={{ marginBottom: '1rem' }}>   What is community spread?
+      <Button color="primary" onClick={this.toggle5} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>   What is community spread?
                </Button></div>
       <Collapse isOpen={this.state.isOpen5}>
         <Card>
@@ -240,7 +240,7 @@ export default class Covid extends Component {
           </CardBody>
         </Card>
       </Collapse>
-      <Button color="primary" onClick={this.toggle6} style={{ marginBottom: '1rem' }}>    Can mosquitoes or ticks spread the virus that causes COVID-19 ?
+      <Button color="primary" onClick={this.toggle6} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>    Can mosquitoes or ticks spread the virus that causes COVID-19 ?
                </Button>
       <Collapse isOpen={this.state.isOpen6}>
         <Card>
@@ -252,7 +252,7 @@ export default class Covid extends Component {
           </CardBody>
         </Card>
       </Collapse>
-      <Button color="primary" onClick={this.toggle7} style={{ marginBottom: '1rem' }}>     What should i do if i get sick or someone in my house get sick ?
+      <Button color="primary" onClick={this.toggle7} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>     What should i do if i get sick or someone in my house get sick ?
                </Button>
       <Collapse isOpen={this.state.isOpen7}>
         <Card>
@@ -293,7 +293,7 @@ export default class Covid extends Component {
           </CardBody>
         </Card>
       </Collapse>
-      <Button color="primary" onClick={this.toggle8} style={{ marginBottom: '1rem' }}>      What should i do if i have had close contact with someone who
+      <Button color="primary" onClick={this.toggle8} style={{ marginBottom: '1rem',width:"100%",textAlign:"left" }}>      What should i do if i have had close contact with someone who
                 has COVID-19 ?
                </Button>
       <Collapse isOpen={this.state.isOpen8}>
