@@ -34,7 +34,7 @@ class Register extends Component {
                     </div>
                     <div className="button-register">Existing user? <Link to='/login'>Login now</Link></div>
                     <div className="button-register">
-                    <button className="btn btn-primary" type="submit" onClick={()=>alert("Registered sussessfully ..Please Login")}> Submit</button>
+                    <button className="btn btn-primary" type="submit" onClick={()=>alert("Registered sussessfully ..Please Login")}> Register</button>
                     </div>
                 </form>
             </div>

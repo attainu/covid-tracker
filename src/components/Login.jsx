@@ -11,7 +11,7 @@ class Login extends Component{
     }
     login(e) {
         e.preventDefault(); 
-        this.props.login(this.state, this.props.users);
+        this.props.login(this.state);
     }
     render() {
         return (
@@ -31,7 +31,7 @@ class Login extends Component{
                         onChange={(e) => this.setState({password: e.target.value})}/>
                     </div>
                     <div className="button-register">New user? <Link to='/register'>Register now</Link></div>
-                    <div className="button-register"><button type="submit" className="btn btn-primary">Submit</button></div>
+                    <div className="button-register"><button type="submit" className="btn btn-primary">Login</button></div>
                     
                 </form>
             </div>
@@ -52,7 +52,7 @@ const mapStateToProps = (reducState) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: (userCreds, userArray) => dispatch(login(userCreds, userArray))
+        login: (userCreds) => dispatch(login(userCreds))
     }
 }
 

@@ -22,15 +22,17 @@ class Profile extends Component {
                             </Col>
                             <Col sm="6">
                                 <div className="profile-heading">HISTORY of SELF ACCESS</div>
-                                {
-                                (JSON.parse(localStorage.getItem("history")).find(find=>find.email===this.props.email))===undefined?<Alert>
-                                    No History of Self Access till now. Please do Self Access first
-                                    </Alert>:
+                                {JSON.parse(localStorage.getItem("history"))===null?
+                               <Alert className="alert" color="warning">
+                               No History of Self Access till now. Please do Self Access first
+                               </Alert>: (JSON.parse(localStorage.getItem("history")).find(find=>find.email===this.props.email))===undefined?<Alert className="alert" color="warning">
+                               No History of Self Access till now. Please do Self Access first
+                               </Alert>:
 
 
-                                 JSON.parse(localStorage.getItem("history")).find(find=>find.email===this.props.email).history.map(
-                                    map=><Alert className="alert" color="warning">Your infection risk was {map}</Alert>
-                                 )
+                            JSON.parse(localStorage.getItem("history")).find(find=>find.email===this.props.email).history.map(
+                               map=><Alert className="alert" color="warning">Your infection risk was {map}</Alert>
+                            )
                                 }
                             </Col>
                         </Row>
