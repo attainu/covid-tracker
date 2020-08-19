@@ -14,8 +14,6 @@ import { Route, Switch } from "react-router-dom";
 // import firebase from "firebase";
 import fire from "././config";
 import Register from "./components/Register";
-import Protected from "./Protected"
-import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -32,18 +30,11 @@ class App extends Component {
           <Route path="/moreInfo" component={MoreInfo} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} /> 
-          <Protected exact path="/profile" component={Profile} isAuth={this.props.user}/> 
+          <Route path="/profile" component={Profile} /> 
         </Switch>
         {/* {this.state.user ? <Home /> : <Login />} */}
       </div>
     );
   }
 }
-
-const mapStateToProps=(state)=>{
-    return{
-        user:state.users.isAuthenticated
-    }
-  }
-export default connect(mapStateToProps)(Protected);
- 
+export default App;
