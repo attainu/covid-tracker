@@ -1,24 +1,22 @@
-// import React from 'react';
-// import {Route,Redirect} from 'react-router-dom';
+import React from 'react';
+import {Route,Redirect} from 'react-router-dom';
 
 
-// const Protected = ({ component: Component,isAuth, ...rest }) => (
+const Protected = ({ component: Component,isAuth, ...rest }) => (
     
-//     <Route
-//       {...rest}
-//       render={props =>
-//         isAuth ? (
-//           <Component {...props} />
-//         ) : (
-//           <Redirect
-//             to={{
-//               pathname: "/login"
-//             }}
-//           />
-//         )
-//       }
-//     />
-//   );
+    <Route
+      {...rest}
+      render={props =>
+       isAuth ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to="/login"
+          />
+        )
+      }
+    />
+  );
 
 
-//   export default Protected;
+  export default Protected;

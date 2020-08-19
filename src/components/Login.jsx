@@ -21,14 +21,14 @@ class Login extends Component{
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
-                        onChange={(e) => this.setState({email: e.target.value})}/>
+                        onChange={(e) => this.setState({email: e.target.value})} required/>
                         
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Password</label>
                         <input type="password" className="form-control" id="exampleInputPassword1"
                         autoComplete="on" 
-                        onChange={(e) => this.setState({password: e.target.value})}/>
+                        onChange={(e) => this.setState({password: e.target.value})} required/>
                     </div>
                     <div className="button-register">New user? <Link to='/register'><span style={{color:"blue"}}>Register now</span></Link></div>
                     <div className="button-register"><button type="submit" className="btn btn-primary">Login</button></div>

@@ -47,7 +47,7 @@ class MoreInfo extends Component {
                     </Col>
 
                     <Col sm="4">
-                        <Card body outline color="secondary" style={{height:"87%"}}>
+                        <Card body outline color="secondary" style={{height:"125px"}}>
                             <PieChart
                                 data={[
                                     { title: 'One', value: this.props.currentCountry.active, color: '#ffc107' },
@@ -89,7 +89,7 @@ class MoreInfo extends Component {
                     </Col>
                     <Col sm="6">
                     <h3>PieChart for Per Million Data</h3>
-                    <Card body outline color="secondary" style={{height:"87%"}}>
+                    <Card body outline color="secondary" style={{height:"300px"}}>
                     
                             <PieChart
                                 data={[

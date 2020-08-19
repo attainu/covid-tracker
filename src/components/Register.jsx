@@ -16,21 +16,21 @@ class Register extends Component {
             <div className="login-main">
                 <form className="form" onSubmit={(e) => {e.preventDefault(); this.props.register(this.state)}}>
                     <div className="form-group">
-                        <label htmlFor="name">Fulname</label>
+                        <label htmlFor="name">Fullname</label>
                         <input className="form-control" type="text" id="name" aria-describedby="emailHelp" 
-                        onChange={(e) => this.setState({fullname: e.target.value})}/>
+                        onChange={(e) => this.setState({fullname: e.target.value})} required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
                         <input className="form-control" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" 
-                        onChange={(e) => this.setState({email: e.target.value})}/>
+                        onChange={(e) => this.setState({email: e.target.value})} required/>
                         
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Password</label>
                         <input className="form-control" type="password" id="exampleInputPassword1"
                         autoComplete="on" 
-                        onChange={(e) => this.setState({password: e.target.value})}/>
+                        onChange={(e) => this.setState({password: e.target.value})} required/>
                     </div>
                     <div className="button-register">Existing user? <Link to='/login'><span style={{color:"blue"}}>Login now</span></Link></div>
                     <div className="button-register">

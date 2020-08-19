@@ -33,7 +33,7 @@ export const update=(value,map)=> dispatch => {
 }
 export const news=()=>async (dispatch) => {
     console.log("news")
-    await fetch("https://newsapi.org/v2/everything?q=covid%20coronavirus%20in%20english&from=2020-08-16&sortBy=publishedAt&apiKey=c16df77238224768a3852f5f547d793d&pageSize=100&page=1")
+    await fetch("https://saurav.tech/NewsAPI/top-headlines/category/health/in.json")
       .then((response) => response.json())
       .then((data) => {
         

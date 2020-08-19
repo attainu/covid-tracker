@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Row, Col, Card, CardImg, CardBody, CardTitle, Alert } from "reactstrap";
 import image from "../../images/download (2).jpg";
 import "../../styles/profile.css";
+import {Redirect} from "react-router-dom";
 class Profile extends Component {
     render() {
         return (
@@ -38,7 +39,7 @@ class Profile extends Component {
                         </Row>
 
                     </div>
-                    : (<div>not logged in</div>)}
+                    : (<Redirect to="/login"/>)}
             </div>
         )
     }
