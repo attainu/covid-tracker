@@ -30,7 +30,7 @@ class Login extends Component{
                         autoComplete="on" 
                         onChange={(e) => this.setState({password: e.target.value})}/>
                     </div>
-                    <div className="button-register">New user? <Link to='/register'>Register now</Link></div>
+                    <div className="button-register">New user? <Link to='/register'><span style={{color:"blue"}}>Register now</span></Link></div>
                     <div className="button-register"><button type="submit" className="btn btn-primary">Login</button></div>
                     
                 </form>

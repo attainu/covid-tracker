@@ -32,7 +32,7 @@ class Register extends Component {
                         autoComplete="on" 
                         onChange={(e) => this.setState({password: e.target.value})}/>
                     </div>
-                    <div className="button-register">Existing user? <Link to='/login'>Login now</Link></div>
+                    <div className="button-register">Existing user? <Link to='/login'><span style={{color:"blue"}}>Login now</span></Link></div>
                     <div className="button-register">
                     <button className="btn btn-primary" type="submit" onClick={()=>alert("Registered sussessfully ..Please Login")}> Register</button>
                     </div>
