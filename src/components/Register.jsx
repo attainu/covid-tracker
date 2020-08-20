@@ -29,12 +29,20 @@ class Register extends Component {
                     <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Password</label>
                         <input className="form-control" type="password" id="exampleInputPassword1"
-                        autoComplete="on" 
+                        autoComplete="on"
+                        minlength="8" 
                         onChange={(e) => this.setState({password: e.target.value})} required/>
                     </div>
                     <div className="button-register">Existing user? <Link to='/login'><span style={{color:"blue"}}>Login now</span></Link></div>
                     <div className="button-register">
-                    <button className="btn btn-primary" type="submit" onClick={()=>alert("Registered sussessfully ..Please Login")}> Register</button>
+                    <button className="btn btn-primary" type="submit" onClick={()=>
+                    
+                        {
+                           console.log(this.state.password.length) 
+                            if(this.state.fullname!==''&&this.state.email!==''&&this.state.password!==''&&(this.state.password.length>=8)){
+                            
+                            alert("Registered sussessfully ..Please Login")}}
+                            }> Register</button>
                     </div>
                 </form>
             </div>
